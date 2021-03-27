@@ -25,4 +25,5 @@ func _unpause_game():
 
 func _main_menu():
 	_unpause_game()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	fader._fade_start("main_menu")

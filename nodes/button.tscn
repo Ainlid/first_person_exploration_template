@@ -22,6 +22,7 @@ margin_left = 642.0
 margin_top = 406.0
 margin_right = 1278.0
 margin_bottom = 445.0
+mouse_default_cursor_shape = 2
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
