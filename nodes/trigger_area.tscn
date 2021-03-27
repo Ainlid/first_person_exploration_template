@@ -6,7 +6,11 @@
 
 [node name="trigger_area" type="Area"]
 script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "connect it to premade nodes or your own code!"
+}
 
 [node name="cshape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 [connection signal="body_entered" from="." to="." method="_body_entered"]
+[connection signal="body_exited" from="." to="." method="_body_exited"]

@@ -1,5 +1,6 @@
-extends Area
+extends Spatial
 
+export(NodePath) var player_path
 export(NodePath) var target_path
 
 var timer
@@ -9,12 +10,11 @@ var player
 func _ready():
 	timer = $timer
 
-func _body_entered(var body):
-	if body.is_in_group("player"):
-		player = body
-		player.playable = false
-		fader._fade_out()
-		timer.start()
+func _warp_start():
+	player = get_node(player_path)
+	player.playable = false
+	fader._fade_out()
+	timer.start()
 
 func _move_player():
 	fader._fade_in()
