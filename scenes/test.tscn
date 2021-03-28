@@ -69,23 +69,23 @@ fade_out_time = 2.0
 player_path = NodePath("../../player")
 target_path = NodePath("../../warp_gizmo")
 
-[node name="trigger_warp2" parent="." instance=ExtResource( 5 )]
+[node name="trigger_portal" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4342, 1.03841, -7.96259 )
 
-[node name="gizmo_cube" parent="trigger_warp2" instance=ExtResource( 4 )]
+[node name="gizmo_cube" parent="trigger_portal" instance=ExtResource( 4 )]
 
-[node name="text_message" parent="trigger_warp2" instance=ExtResource( 9 )]
+[node name="text_message" parent="trigger_portal" instance=ExtResource( 9 )]
 message = "and change the scene."
 
-[node name="portal" parent="trigger_warp2" instance=ExtResource( 10 )]
+[node name="portal" parent="trigger_portal" instance=ExtResource( 10 )]
 path = "main_menu"
 
-[node name="trigger_warp3" parent="." instance=ExtResource( 5 )]
+[node name="trigger_extra" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4342, 1.03841, 1.21845 )
 
-[node name="gizmo_cube" parent="trigger_warp3" instance=ExtResource( 4 )]
+[node name="gizmo_cube" parent="trigger_extra" instance=ExtResource( 4 )]
 
-[node name="text_message" parent="trigger_warp3" instance=ExtResource( 9 )]
+[node name="text_message" parent="trigger_extra" instance=ExtResource( 9 )]
 message = "but really, you can connect it to any function!
 have fun!"
 fade_out_time = 2.0
@@ -100,11 +100,11 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.88904
 [connection signal="player_entered" from="trigger_audio" to="trigger_audio/text_message" method="_show_text"]
 [connection signal="player_exited" from="trigger_audio" to="trigger_audio/audio_player" method="_stop_sound"]
 [connection signal="player_exited" from="trigger_audio" to="trigger_audio/text_message" method="_hide_text"]
-[connection signal="player_entered" from="trigger_warp" to="trigger_warp/warp" method="_warp_start"]
 [connection signal="player_entered" from="trigger_warp" to="trigger_warp/text_message" method="_show_text"]
+[connection signal="player_entered" from="trigger_warp" to="trigger_warp/warp" method="_warp_start"]
 [connection signal="player_exited" from="trigger_warp" to="trigger_warp/text_message" method="_hide_text"]
-[connection signal="player_entered" from="trigger_warp2" to="trigger_warp2/text_message" method="_show_text"]
-[connection signal="player_entered" from="trigger_warp2" to="trigger_warp2/portal" method="_portal_use"]
-[connection signal="player_exited" from="trigger_warp2" to="trigger_warp2/text_message" method="_hide_text"]
-[connection signal="player_entered" from="trigger_warp3" to="trigger_warp3/text_message" method="_show_text"]
-[connection signal="player_exited" from="trigger_warp3" to="trigger_warp3/text_message" method="_hide_text"]
+[connection signal="player_entered" from="trigger_portal" to="trigger_portal/portal" method="_portal_use"]
+[connection signal="player_entered" from="trigger_portal" to="trigger_portal/text_message" method="_show_text"]
+[connection signal="player_exited" from="trigger_portal" to="trigger_portal/text_message" method="_hide_text"]
+[connection signal="player_entered" from="trigger_extra" to="trigger_extra/text_message" method="_show_text"]
+[connection signal="player_exited" from="trigger_extra" to="trigger_extra/text_message" method="_hide_text"]

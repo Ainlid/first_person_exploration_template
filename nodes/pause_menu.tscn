@@ -28,9 +28,14 @@ __meta__ = {
 [node name="button_resume" parent="menu" instance=ExtResource( 2 )]
 text = "resume"
 
-[node name="button_main_menu" parent="menu" instance=ExtResource( 2 )]
+[node name="button_reload" parent="menu" instance=ExtResource( 2 )]
 margin_top = 509.0
 margin_bottom = 563.0
+text = "reload"
+
+[node name="button_main_menu" parent="menu" instance=ExtResource( 2 )]
+margin_top = 609.0
+margin_bottom = 663.0
 text = "main menu"
 
 [node name="label" parent="menu" instance=ExtResource( 4 )]
@@ -39,4 +44,5 @@ margin_bottom = 356.0
 custom_fonts/font = ExtResource( 3 )
 text = "paused"
 [connection signal="pressed" from="menu/button_resume" to="." method="_unpause_game"]
+[connection signal="pressed" from="menu/button_reload" to="." method="_reload"]
 [connection signal="pressed" from="menu/button_main_menu" to="." method="_main_menu"]

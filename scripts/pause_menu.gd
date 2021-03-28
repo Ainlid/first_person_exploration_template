@@ -23,6 +23,10 @@ func _unpause_game():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	menu.hide()
 
+func _reload():
+	_unpause_game()
+	fader._reload_scene()
+
 func _main_menu():
 	_unpause_game()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

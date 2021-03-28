@@ -4,5 +4,8 @@
 
 [node name="audio_player" type="AudioStreamPlayer"]
 script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="tween" type="Tween" parent="."]
