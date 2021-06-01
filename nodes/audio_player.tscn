@@ -9,3 +9,4 @@ __meta__ = {
 }
 
 [node name="tween" type="Tween" parent="."]
+script = null

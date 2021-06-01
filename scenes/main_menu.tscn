@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://nodes/label.tscn" type="PackedScene" id=1]
-[ext_resource path="res://fonts/cutive_mono_72.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/cutive_mono_72.tres" type="Font" id=2]
 [ext_resource path="res://nodes/button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/play_button.gd" type="Script" id=5]
 [ext_resource path="res://scripts/quit_button.gd" type="Script" id=6]
@@ -21,25 +21,31 @@ bg_color = Color( 0.25098, 0.25098, 0.25098, 1 )
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0, 0, 0, 0.25098 )
 
-[node name="main_menu" type="Spatial"]
+[node name="main_menu" type="Node3D"]
+script = null
 
 [node name="title" parent="." instance=ExtResource( 1 )]
-margin_left = 0.0
-margin_top = 88.0
-margin_right = 1920.0
-margin_bottom = 168.0
+anchor_right = 1.0
+offset_bottom = 99.0
 custom_fonts/font = ExtResource( 2 )
 text = "First Person Exploration Template"
+structured_text_bidi_override_options = [  ]
+script = null
 
 [node name="credit" parent="." instance=ExtResource( 1 )]
-margin_left = 1278.0
-margin_top = 974.0
-margin_right = 1868.0
-margin_bottom = 1034.0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -590.0
+offset_top = 168.0
+offset_bottom = 222.0
 text = "Ainlid, 2021"
+structured_text_bidi_override_options = [  ]
+script = null
 
 [node name="play_button" parent="." instance=ExtResource( 3 )]
-margin_bottom = 460.0
+offset_top = 100.0
+offset_right = 40.0
+offset_bottom = 397.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
@@ -49,14 +55,17 @@ text = "play"
 script = ExtResource( 5 )
 
 [node name="quit_button" parent="." instance=ExtResource( 3 )]
-margin_top = 514.0
-margin_bottom = 568.0
+offset_top = 514.927
+offset_right = 41.1892
+offset_bottom = 586.927
 text = "quit"
 script = ExtResource( 6 )
 
 [node name="timer" type="Timer" parent="quit_button"]
 wait_time = 0.5
 one_shot = true
+script = null
+
 [connection signal="pressed" from="play_button" to="play_button" method="_play_game"]
 [connection signal="pressed" from="quit_button" to="quit_button" method="_quit_pressed"]
 [connection signal="timeout" from="quit_button/timer" to="quit_button" method="_quit_game"]

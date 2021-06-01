@@ -1,13 +1,12 @@
 extends AudioStreamPlayer
 
-export var fade_in_time = 0.5
-export var fade_out_time = 0.5
+@export var fade_in_time: float = 0.5
+@export var fade_out_time: float = 0.5
 
-var tween
+@onready var tween := $tween as Tween
 
 func _ready():
 	volume_db = -20.0
-	tween = $tween
 
 func _play_sound():
 	if fade_in_time > 0.0:

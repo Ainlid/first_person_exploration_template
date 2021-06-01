@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/cheer_up.wav-6175e4d48f0f310a101cad67a15487f1.sample"
+path="res://.godot/imported/cheer_up.wav-6175e4d48f0f310a101cad67a15487f1.sample"
 
 [deps]
 
 source_file="res://audio/cheer_up.wav"
-dest_files=[ "res://.import/cheer_up.wav-6175e4d48f0f310a101cad67a15487f1.sample" ]
+dest_files=[ "res://.godot/imported/cheer_up.wav-6175e4d48f0f310a101cad67a15487f1.sample" ]
 
 [params]
 

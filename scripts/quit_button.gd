@@ -1,9 +1,7 @@
 extends Button
 
-var timer
+@onready var timer := $timer as Timer
 
-func _ready():
-	timer = $timer
 
 func _quit_pressed():
 	fader._fade_out()

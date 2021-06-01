@@ -3,23 +3,26 @@
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://nodes/pause_menu.tscn" type="PackedScene" id=2]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape3D" id=1]
 radius = 0.5
 
-[node name="player" type="KinematicBody" groups=[
+[node name="player" type="KinematicBody3D" groups=[
 "player",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 script = ExtResource( 1 )
 
-[node name="cshape" type="CollisionShape" parent="."]
+[node name="cshape" type="CollisionShape3D" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 1 )
+script = null
 
-[node name="pivot" type="Spatial" parent="."]
+[node name="pivot" type="Node3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+script = null
 
-[node name="camera" type="Camera" parent="pivot"]
+[node name="camera" type="Camera3D" parent="pivot"]
 current = true
+script = null
 
 [node name="pause_menu" parent="." instance=ExtResource( 2 )]
