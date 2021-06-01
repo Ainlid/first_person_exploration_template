@@ -1,14 +1,11 @@
-extends Spatial
+extends Node3D
 
-export(NodePath) var player_path
-export(NodePath) var target_path
+@export_node_path(Node) var player_path
+@export_node_path(Node) var target_path
 
-var timer
+@onready var timer := $timer as Timer
 
 var player
-
-func _ready():
-	timer = $timer
 
 func _warp_start():
 	player = get_node(player_path)

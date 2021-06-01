@@ -1,19 +1,17 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://fonts/cutive_mono_48.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/cutive_mono_48.tres" type="Font" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.25098 )
 
 [node name="label" type="Label"]
-margin_left = 790.0
-margin_top = 258.0
-margin_right = 1127.0
-margin_bottom = 324.0
 custom_styles/normal = SubResource( 1 )
 custom_fonts/font = ExtResource( 1 )
 text = "sample text"
 align = 1
+structured_text_bidi_override_options = [  ]
+script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }

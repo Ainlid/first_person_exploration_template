@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/warp.gd" type="Script" id=1]
 
-[node name="warp" type="Spatial"]
+[node name="warp" type="Node3D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_description_": "don't forget to assign the player and the target node!"
@@ -11,4 +11,6 @@ __meta__ = {
 [node name="timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+script = null
+
 [connection signal="timeout" from="timer" to="." method="_move_player"]

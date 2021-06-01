@@ -1,9 +1,8 @@
 extends Node
 
-var menu
+@onready var menu := $menu as Control
 
 func _ready():
-	menu = $menu
 	_unpause_game()
 
 func _input(event):

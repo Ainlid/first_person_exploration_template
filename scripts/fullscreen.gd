@@ -1,5 +1,5 @@
 extends Node
 
-func _process(delta):
-	if Input.is_action_pressed("fullscreen"):
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen

@@ -1,22 +1,21 @@
-extends KinematicBody
+extends KinematicBody3D
 
-export var gravity = -30.0
-export var walk_speed = 8.0
-export var run_speed = 16.0
-export var jump_speed = 10.0
-export var mouse_sensitivity = 0.002
-export var acceleration = 4.0
-export var friction = 6.0
-export var fall_limit = -1000.0
+@export var gravity: float = -30.0
+@export var walk_speed: float = 8.0
+@export var run_speed: float = 16.0
+@export var jump_speed: float = 10.0
+@export var mouse_sensitivity: float = 0.002
+@export var acceleration: float = 4.0
+@export var friction: float = 6.0
+@export var fall_limit: float = -1000.0
 
-var pivot
+@onready var pivot := $pivot as Node3D
 
 var playable = true
 var dir = Vector3.ZERO
 var velocity = Vector3.ZERO
 
 func _ready():
-	pivot = $pivot
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
@@ -52,7 +51,7 @@ func _physics_process(delta):
 		accel = acceleration
 	else:
 		accel = friction
-	hvel = hvel.linear_interpolate(target, accel * delta)
+	hvel = hvel.lerp(target, accel * delta)
 	velocity.x = hvel.x
 	velocity.z = hvel.z
 	if playable:
